@@ -1,0 +1,1 @@
+export {productConstants} from './productconstant'

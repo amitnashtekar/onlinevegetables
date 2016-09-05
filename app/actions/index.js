@@ -1,0 +1,1 @@
+export {loadProductsActn} from './product';
