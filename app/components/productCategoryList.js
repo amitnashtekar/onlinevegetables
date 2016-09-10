@@ -6,7 +6,7 @@ export default class ProductCategoryList extends Component {
 			<ul>
 				{this.props.productCategories.map((productCategory) => {
 					return <li key={productCategory.id}>{productCategory.name}</li>
-				})};
+				})}
 			</ul>
 		);
 	}

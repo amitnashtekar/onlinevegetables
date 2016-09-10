@@ -1,11 +1,13 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {ProductCategoryList} from '../components/index.js'
-import {loadProductCategories} from '../actions/product'
+import * as productActions from '../actions/product'
+import {bindActionCreators} from 'redux'
 
 class ProductCategoryApp extends Component {
+
 	componentWillMount () {
-		this.props.dispatch(loadProductCategories());
+		this.props.productCategoryActions.loadProductCategories();
 	}
 
 	render () {
@@ -19,8 +21,12 @@ class ProductCategoryApp extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  productCategories: state.productLoad.productCategoryList,
-  dispatch: state.dispatch
+  productCategories: state.productLoad.productCategoryList
 });
 
-export default connect(mapStateToProps)(ProductCategoryApp);
+const mapDispatchToProps = (dispatch) => ({
+  productCategoryActions: bindActionCreators(productActions, dispatch)
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCategoryApp);
