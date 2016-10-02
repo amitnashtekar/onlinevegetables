@@ -4,14 +4,13 @@ import {ProductCategoryList} from '../components/index.js'
 import * as productActions from '../actions/product'
 import {bindActionCreators} from 'redux'
 
-class ProductCategoryApp extends Component {
+class ProductCategory extends Component {
 
 	componentWillMount () {
 		this.props.productCategoryActions.loadProductCategories();
 	}
 
 	render () {
-		console.log(this.props.productCategories);
 		return (
 			<div>
 				<ProductCategoryList productCategories={this.props.productCategories} />
@@ -29,4 +28,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductCategoryApp);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCategory);

@@ -1,1 +1,2 @@
-export ProductCategoryApp from './productCategoryApp' ;
+export ProductCategory from './ProductCategory';
+export Root from './Root';

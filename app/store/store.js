@@ -1,5 +1,6 @@
 import { createStore } from 'redux';
 import reducers from '../reducers';
+import DevTools from '../containers/DevTools';
 
-const onlineVegeStore  = createStore(reducers);
-export default onlineVegeStore;
+const store  = createStore(reducers);
+export default store;

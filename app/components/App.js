@@ -1,20 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-
-  class App extends React.Component{
+export default class App extends React.Component{
 	render() {
 		return(
 		<div>
-		hi{this.props.productLoadStatus.toString()}
+			<h1>PuneSubji1</h1>
+			<Link to="/store/home">Home</Link><br/>
+            <Link to="/store/vegetables">Vegetables</Link><br/>
+            <Link to="/store/fruits">Fruits</Link><br/>
+            <Link to="/store/leafy-vegetables">Leafy Vegetables</Link><br/>
+            <Link to="/store/exotic-vegetables">Exotic Vegetables</Link>
+
+            {this.props.children}
 		</div>
 		);
 	}
-} 	
-
-const mapStateToProps = (state) => ({
-  productLoadStatus: state.productLoad.isProductFetch
-
-});
-export default connect(mapStateToProps)(App);
+}

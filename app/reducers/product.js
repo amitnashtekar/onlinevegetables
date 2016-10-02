@@ -9,14 +9,15 @@ const {
 
 const initialState = {
 	isProductFetch: false,
-	productCategoryList: []		
+	productCategoryList: [],
+	products: []		
 }
 
 export function productLoad(state = initialState, action) {
 	switch(action.type) {
 		case REQUEST_PRODUCT:
 			return Object.assign({}, state, {
-				isProductFetch: action.isProductFetch
+				products: action.products
 			});
 		case REQUEST_PRODUCT_CATEGORY:
 			return Object.assign({}, state, {

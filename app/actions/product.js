@@ -1,6 +1,6 @@
 import {productConstants} from '../constants';
 
-const {
+const {	
 	REQUEST_PRODUCT,
 	PRODUCT_SUCCESS,
 	PRODUCT_FAIL,
@@ -9,10 +9,37 @@ const {
 	PRODUCT_CATEGORY_FAIL
 } = productConstants;
 
-export function loadProductsActn() {
+export function loadProducts() {
 	return {
 		type: REQUEST_PRODUCT,
-		isProductFetch: true
+		products: [
+			{
+				id: 1,
+				name: 'product1',
+				price: 10
+			},
+			{
+				id: 2,
+				name: 'product2',
+				price: 20
+			},
+			{
+				id: 3,
+				name: 'product3',
+				price: 30
+			},
+			{
+				id: 4,
+				name: 'product4',
+				price: 40
+			},
+			{
+				id: 5,
+				name: 'product5',
+				price: 50
+			}
+
+		]
 	}
 }
 
