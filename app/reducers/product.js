@@ -1,25 +1,30 @@
-import {productConstants} from '../constants';
+import { productActions } from '../constants';
 
 const {
-	REQUEST_PRODUCT,
-	PRODUCT_SUCCESS,
-	PRODUCT_FAIL,
-	REQUEST_PRODUCT_CATEGORY
-} = productConstants;
+	GET_PRODUCT_REQUEST,
+	GET_PRODUCT_SUCCESS,
+	GET_PRODUCT_FAILURE,
+	GET_PRODUCT_CATEGORY_REQUEST,
+	GET_PRODUCT_CATEGORY_SUCCESS,
+	GET_PRODUCT_CATEGORY_FAILURE
+} = productActions;
 
 const initialState = {
-	isProductFetch: false,
-	productCategoryList: [],
+	isLoading: false,
 	products: []		
 }
 
 export function productLoad(state = initialState, action) {
 	switch(action.type) {
-		case REQUEST_PRODUCT:
+		case GET_PRODUCT_REQUEST:
 			return Object.assign({}, state, {
 				products: action.products
 			});
-		case REQUEST_PRODUCT_CATEGORY:
+		case GET_PRODUCT_CATEGORY_REQUEST:
+			return Object.assign({}, state, {
+				productCategoryList: action.productCategoryList
+			});	
+		case GET_PRODUCT_CATEGORY_SUCCESS:
 			return Object.assign({}, state, {
 				productCategoryList: action.productCategoryList
 			});

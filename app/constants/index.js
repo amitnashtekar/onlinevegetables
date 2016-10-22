@@ -1,1 +1,1 @@
-export {productConstants} from './productconstant'
+export { productActions, productCategoryActions } from './actions'

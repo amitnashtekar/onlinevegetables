@@ -1,8 +1,8 @@
-import React, {Component, PropTypes} from 'react'
-import {connect} from 'react-redux'
-import {ProductList} from '../components/index.js'
-import * as productActions from '../actions/product'
-import {bindActionCreators} from 'redux'
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { ProductList } from '../components';
+import * as Actions from '../actions';
+import { bindActionCreators } from 'redux';
 
 class Products extends Component {
 
@@ -24,7 +24,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  productActions: bindActionCreators(productActions, dispatch)
+  productActions: bindActionCreators(Actions.ProductActions, dispatch)
 });
 
 

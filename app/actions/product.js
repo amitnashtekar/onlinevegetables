@@ -1,17 +1,14 @@
-import {productConstants} from '../constants';
+import { productActions } from '../constants';
 
 const {	
-	REQUEST_PRODUCT,
-	PRODUCT_SUCCESS,
-	PRODUCT_FAIL,
-	REQUEST_PRODUCT_CATEGORY,
-	PRODUCT_CATEGORY_SUCCESS,
-	PRODUCT_CATEGORY_FAIL
-} = productConstants;
+	GET_PRODUCT_REQUEST,
+	GET_PRODUCT_SUCCESS,
+	GET_PRODUCT_FAILURE
+} = productActions;
 
 export function loadProducts() {
 	return {
-		type: REQUEST_PRODUCT,
+		type: GET_PRODUCT_REQUEST,
 		products: [
 			{
 				id: 1,
@@ -40,30 +37,5 @@ export function loadProducts() {
 			}
 
 		]
-	}
-}
-
-export function loadProductCategories() {
-	return {
-		type: REQUEST_PRODUCT_CATEGORY,
-		productCategoryList: [
-					{
-						id: 1,
-						name: 'Vegetables',
-						description: 'Fresh vegetables',
-						count: 10
-					},
-					{
-						id: 2,
-						name: 'Fruits',
-						description: 'Fresh fruits',
-						count: 20
-					},
-					{
-						id: 3,
-						name: 'Leafy Vegetables',
-						description: 'Fresh Leafy vegetables',
-						count: 30
-					}]		
 	}
 }

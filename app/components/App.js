@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default class App extends React.Component{
+export default class App extends React.Component {
 	render() {
 		return(
 		<div>
-			<h1>PuneSubji1</h1>
+			<h1>PuneSubji</h1>
 			<Link to="/store/home">Home</Link><br/>
             <Link to="/store/vegetables">Vegetables</Link><br/>
             <Link to="/store/fruits">Fruits</Link><br/>
